@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/TRAVEL_GUIDE_FE/static/css/main.0a248b10.css",
-    "main.js": "/TRAVEL_GUIDE_FE/static/js/main.aed30915.js",
+    "main.css": "/TRAVEL_GUIDE_FE/static/css/main.87122176.css",
+    "main.js": "/TRAVEL_GUIDE_FE/static/js/main.4a06f1c8.js",
     "static/js/453.9fe7922c.chunk.js": "/TRAVEL_GUIDE_FE/static/js/453.9fe7922c.chunk.js",
+    "static/media/down-scroll.svg": "/TRAVEL_GUIDE_FE/static/media/down-scroll.23adaec256e0b74cd2e3152949e238ad.svg",
     "index.html": "/TRAVEL_GUIDE_FE/index.html",
-    "main.0a248b10.css.map": "/TRAVEL_GUIDE_FE/static/css/main.0a248b10.css.map",
-    "main.aed30915.js.map": "/TRAVEL_GUIDE_FE/static/js/main.aed30915.js.map",
+    "static/media/triangle.svg": "/TRAVEL_GUIDE_FE/static/media/triangle.9486f4c704fbe8fcd51e4a4b5e3ae7ca.svg",
+    "main.87122176.css.map": "/TRAVEL_GUIDE_FE/static/css/main.87122176.css.map",
+    "main.4a06f1c8.js.map": "/TRAVEL_GUIDE_FE/static/js/main.4a06f1c8.js.map",
     "453.9fe7922c.chunk.js.map": "/TRAVEL_GUIDE_FE/static/js/453.9fe7922c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a248b10.css",
-    "static/js/main.aed30915.js"
+    "static/css/main.87122176.css",
+    "static/js/main.4a06f1c8.js"
   ]
 }
