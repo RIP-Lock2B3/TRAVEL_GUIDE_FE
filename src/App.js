@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import SplashScreen from "./splash_screen/SplashScreen";
+import CustomCursor from "./custom-cursor/CustomCursor";
+import LoginPage from "./components/LoginPage";
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashFinish = () => {
+    setShowSplash(false);
+  };
+  console.log(showSplash);
+
+  useEffect(() => {
+    // Simulate the splash screen duration (e.g., 3 seconds)
+    const timer = setTimeout(handleSplashFinish, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showSplash && (
+        <>
+          <LoginPage></LoginPage>
+        </>
+      )}
+      {showSplash && <SplashScreen />}
+      {!showSplash && (
+        <>
+          <CustomCursor />
+          <LoginPage></LoginPage>
+        </>
+      )}
     </div>
   );
 }
