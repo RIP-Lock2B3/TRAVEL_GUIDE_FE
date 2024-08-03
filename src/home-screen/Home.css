@@ -1,0 +1,258 @@
+/* Common Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+/* Preloader */
+.transition2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #1b1b1b;
+    z-index: 10;
+}
+
+/* Landing Page Styles */
+.landing {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* Top Section */
+.landing__top {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.landing__main {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.landing__main2 {
+    display: none;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.links .item {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.scroll-down {
+    margin-top: 20px;
+}
+
+/* Shapes */
+.shapes {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.shapes>div {
+    margin: 0 10px;
+}
+
+/* Projects Section */
+.landing__work {
+    padding: 70px 0;
+    background: #1e1e1e;
+}
+
+.landing__work .title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.landing__work .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.landing__work .box {
+    flex: 1 1 48%;
+    margin-bottom: 20px;
+    position: relative;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.landing__work .box:hover {
+    transform: translateY(-10px);
+}
+
+.landing__work .box .box-content {
+    padding: 20px;
+}
+
+.landing__work .box .box-content .box-anim {
+    margin-bottom: 10px;
+}
+
+.landing__work .box .box-image {
+    height: 200px;
+    background: #444;
+}
+
+.more {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.more:hover {
+    background: #0056b3;
+}
+
+/* Social Section */
+.find-me {
+    padding: 70px 0;
+    background: #1e1e1e;
+    text-align: center;
+}
+
+.find-me .title {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.find-me .topic {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.social-boxes {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-boxes .box {
+    margin: 0 10px;
+    padding: 20px;
+    background: #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.social-boxes .box:hover {
+    background: #444;
+}
+
+.social-boxes .box .content {
+    display: flex;
+    align-items: center;
+}
+
+.social-boxes .box .content .items {
+    margin-left: 10px;
+}
+
+.social-boxes .box .content .items .name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.social-boxes .box .content .items .user {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Contact Section */
+.contact {
+    padding: 70px 0;
+    background: #1b1b1b;
+    text-align: center;
+}
+
+.contact .topic {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    background: #1b1b1b;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .landing__main {
+        display: none;
+    }
+
+    .landing__main2 {
+        display: block;
+    }
+
+    .landing__work .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .landing__work .box {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}

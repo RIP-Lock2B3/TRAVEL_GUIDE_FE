@@ -1,0 +1,70 @@
+.preloader {
+  height: 100vh;
+  height: calc(1vh * 100);
+  width: 100%;
+  background: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  overflow: hidden !important;
+}
+
+.preloader .texts-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  overflow: hidden;
+  opacity: 0;
+  color: white;
+}
+
+.main-hed {
+  width: 500px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.sub-hed {
+  width: 300px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #006eff, #b066ff, #eb4d8a, #ff7c7c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-start {
+  background: linear-gradient(to right, #006eff, #006eff, #006eff, #b066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-mid {
+  background: linear-gradient(to right, #b066ff, #b066ff, #eb4d8a, #eb4d8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-end {
+  background: linear-gradient(to right, #eb4d8a, #ff7c7c, #ff7c7c, #ff7c7c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .preloader .texts-container {
+    font-size: 40px;
+    width: 240px;
+  }
+}

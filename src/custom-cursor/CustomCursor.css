@@ -1,0 +1,25 @@
+/* Disable the default cursor */
+body {
+    cursor: none;
+}
+
+/* Style for the custom cursor */
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.outer-circle {
+    width: 40px;
+    height: 40px;
+    background: white;
+}
+
+.inner-circle {
+    width: 10px;
+    height: 10px;
+    background: white;
+}
