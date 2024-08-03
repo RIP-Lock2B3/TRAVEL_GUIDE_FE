@@ -6,7 +6,7 @@ import Shapes from "./Shapes";
 function LoginPage() {
   return (
     <>
-      <div className="page-body">
+      <div className="login-page-body">
         <LoginCard></LoginCard>
         {/* <Shapes></Shapes> */}
       </div>

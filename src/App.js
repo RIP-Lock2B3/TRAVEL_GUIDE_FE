@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import SplashScreen from "./splash_screen/SplashScreen";
 import CustomCursor from "./custom-cursor/CustomCursor";
 import LoginPage from "./components/LoginPage";
+import "./App.css";
+import Home from "./home-screen/Home";
+import SignupPage from "./components/SignupPage";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,18 +26,42 @@ function App() {
     <div className="App">
       {showSplash && (
         <>
-          <LoginPage></LoginPage>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LoginPage />} index />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </BrowserRouter>
         </>
       )}
       {showSplash && <SplashScreen />}
       {!showSplash && (
         <>
           <CustomCursor />
-          <LoginPage></LoginPage>
+
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LoginPage />} index />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/signup" element={<SignupPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </BrowserRouter>
         </>
       )}
     </div>
   );
+  // return (
+  //   <BrowserRouter>
+  //     <Routes>
+  //       <Route path="/" element={<LoginPage />} index />
+  //       <Route path="/login" element={<LoginPage />} />
+  //       <Route path="/home" element={<Home />} />
+  //       <Route path="*" element={<Navigate to="/" replace />} />
+  //     </Routes>
+  //   </BrowserRouter>
+  // );
 }
 
 export default App;

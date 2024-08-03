@@ -1,12 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginCard.css";
 
 const LoginCard = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const errorStyle = { borderColor: "rgba(254, 0, 0, 0.597)" };
 
   const handleSubmit = (event) => {
@@ -27,14 +29,16 @@ const LoginCard = () => {
       .then((response) => {
         console.log(response);
         setError(null);
+        setUsername("");
+        setPassword("");
         // Handle successful login response
+
+        navigate("/home", { replace: true });
       })
       .catch((error) => {
         console.log(error["response"]["data"]);
         setError(error["response"]["data"]["message"]);
       });
-    setUsername("");
-    setPassword("");
   };
   return (
     <div className="form-container">
@@ -119,7 +123,10 @@ const LoginCard = () => {
       </div>
       <div className="signup">
         Don't have an account?{"  "}
-        <a rel="noopener noreferrer" href="#">
+        <a
+          rel="noopener noreferrer"
+          href="#"
+          onClick={(event) => navigate("/signup", { replace: true })}>
           Sign up now
         </a>
       </div>
