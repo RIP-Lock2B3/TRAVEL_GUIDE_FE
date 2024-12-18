@@ -7,4 +7,6 @@ jobs:
       - name: Step1
         run: echo "Hello!!!!!"
       - name: Step2
-        run: echo "Bye...."
+        run: |
+          echo "Good"
+          echo "Bye...."
