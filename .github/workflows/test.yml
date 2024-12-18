@@ -15,7 +15,7 @@ jobs:
           node-version: 20.16.0
       - name: Install Dependencies
         run: npm ci
-      - name: Test Run
+      - name: Build Project
         run: npm run build
       - name: List Files
         run: ls -l
