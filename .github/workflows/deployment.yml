@@ -29,6 +29,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Project
+        env:
+          CI: false
         run: npm run build
       - name: Deploy
         run: echo
