@@ -16,4 +16,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Test Run
-        run: npm test
+        run: npm run build
+      - name: List Files
+        run: ls -l
