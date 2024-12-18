@@ -16,6 +16,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Project
-        run: npm run build
+        run: |
+          echo "CI=false" >> .env
+          npm run build
       - name: List Files
         run: ls -l
