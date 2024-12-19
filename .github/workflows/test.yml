@@ -36,9 +36,9 @@ jobs:
         run: |
           echo "START"
           echo ${{vars.BUILD_NUMBER}}
-          cat $GITHUB_ENV
           echo BUILD_NUMBER=$((${{vars.BUILD_NUMBER}} + 1)) >> $GITHUB_ENV
           echo artifact_name=travel-guide@${{vars.BUILD_NUMBER}} >> $GITHUB_OUTPUT
+          cat $GITHUB_ENV
           echo ${{vars.BUILD_NUMBER}} - $BUILD_NUMBER --
           echo "END"
       - name: Save Artifact
