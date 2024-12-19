@@ -49,7 +49,7 @@ jobs:
       - name: Save Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: travel-guide@${{vars.BUILD_NUMBER}}
+          name: travel-guide@${{env.BUILD_NUMBER}}
           overwrite: true
           path: build
   deploy:
