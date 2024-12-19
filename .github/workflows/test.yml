@@ -28,9 +28,9 @@ jobs:
       - id: NAME_GENERATER
         name: Generate artifact name
         run: |
-          echo ${{env.BUILD_NUMBER}}
-          echo "BUILD_NUMBER=$(expr ${{ env.BUILD_NUMBER }} + 1)" >> $GITHUB_ENV
-          echo "artifact_name=travel-guide@${{env.BUILD_NUMBER}}" >> $GITHUB_OUTPUT
+          echo $BUILD_NUMBER
+          echo "BUILD_NUMBER=$(expr $BUILD_NUMBER + 1)" >> $GITHUB_ENV
+          echo "artifact_name=travel-guide@$BUILD_NUMBER" >> $GITHUB_OUTPUT
       - name: Save Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -45,7 +45,7 @@ jobs:
       - name: Get Build Artifact
         uses: actions/download-artifact@v4
         with:
-          name: travel-guide@${{env.BUILD_NUMBER}}
+          name: travel-guide@1
           path: build
       - name: List Files
         run: echo ${{needs.test-build.outputs.artifact_name}}
