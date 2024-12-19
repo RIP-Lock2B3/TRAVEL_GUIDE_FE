@@ -6,6 +6,8 @@ on:
 jobs:
   test-build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_name: ${{steps.NAME_GENERATER.outputs.artifact_name}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -23,15 +25,17 @@ jobs:
         run: npm run build
       - name: List Files
         run: ls -l
+      - id: NAME_GENERATER
+        name: Generate artifact name
+        run: |
+          echo ${{env.BUILD_NUMBER}}
+          echo "BUILD_NUMBER=$(expr ${{ env.BUILD_NUMBER }} + 1)" >> $GITHUB_ENV
+          echo "artifact_name=travel-guide@${{env.BUILD_NUMBER}}" >> $GITHUB_OUTPUT
       - name: Save Artifact
         uses: actions/upload-artifact@v4
         with:
-          # Name of the artifact to upload.
-          # Optional. Default is 'artifact'
-          name: travel-guide@1.0.0
+          name: travel-guide@${{env.BUILD_NUMBER}}
           overwrite: true
-          # A file, directory or wildcard pattern that describes what to upload
-          # Required.
           path: build
   deploy:
     needs:
@@ -41,7 +45,7 @@ jobs:
       - name: Get Build Artifact
         uses: actions/download-artifact@v4
         with:
-          name: travel-guide@1.0.0
+          name: travel-guide@${{env.BUILD_NUMBER}}
           path: build
       - name: List Files
-        run: ls -l
+        run: echo ${{needs.test-build.outputs.artifact_name}}
