@@ -15,9 +15,20 @@ jobs:
           node-version: 20.16.0
       - name: Install Dependencies
         run: npm ci
+      - name: Test Project
+        run: npm test
       - name: Build Project
         env:
           CI: false
         run: npm run build
       - name: List Files
         run: ls -l
+      - name: Save Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # Name of the artifact to upload.
+          # Optional. Default is 'artifact'
+          name: travel-guide@1.0.0
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required.
+          path: build
