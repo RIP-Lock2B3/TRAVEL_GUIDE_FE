@@ -33,7 +33,7 @@ jobs:
           echo ${{vars.BUILD_NUMBER}}
           echo BUILD_NUMBER=$((${{vars.BUILD_NUMBER}} + 1)) >> $GITHUB_ENV
           echo artifact_name=travel-guide@${{vars.BUILD_NUMBER}} >> $GITHUB_OUTPUT
-          echo ${{vars.BUILD_NUMBER}} - $BUILD_NUMBER => $GITHUB_ENV
+          echo ${{vars.BUILD_NUMBER}} - $BUILD_NUMBER --
           echo "END"
       - name: Save Artifact
         uses: actions/upload-artifact@v4
