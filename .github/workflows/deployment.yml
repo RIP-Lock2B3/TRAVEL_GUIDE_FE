@@ -1,5 +1,6 @@
 name: Deploy Project
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
