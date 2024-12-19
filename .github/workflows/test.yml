@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "START"
           echo ${{vars.BUILD_NUMBER}}
-          echo BUILD_NUMBER=$(expr $BUILD_NUMBER + 1) >> $GITHUB_ENV
+          echo BUILD_NUMBER=$(expr ${{vars.BUILD_NUMBER}} + 1) >> $GITHUB_ENV
           echo artifact_name=travel-guide@$BUILD_NUMBER >> $GITHUB_OUTPUT
           echo "END"
       - name: Save Artifact
@@ -48,7 +48,7 @@ jobs:
       - name: Get Build Artifact
         uses: actions/download-artifact@v4
         with:
-          name: travel-guide@1
+          name: ${{needs.test-build.outputs.artifact_name}}
           path: build
       - name: List Files
         run: echo ${{needs.test-build.outputs.artifact_name}}
