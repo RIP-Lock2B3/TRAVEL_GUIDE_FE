@@ -24,6 +24,9 @@ jobs:
       #   env:
       #     CI: false
       #   run: npm run build
+      - name: Show GITHUB_ENV Contents
+        run: cat $GITHUB_ENV
+
       - name: List Files
         run: ls -l
       - id: NAME_GENERATER
