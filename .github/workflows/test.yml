@@ -27,7 +27,7 @@ jobs:
       - name: Show GITHUB_ENV Contents
         run: |
           echo "MY_VAR=HelloWorld" >> $GITHUB_ENV
-          cat $GITHUB_ENV
+          cat $GITHUB_ENV -- $MY_VAR
 
       - name: List Files
         run: ls -l
