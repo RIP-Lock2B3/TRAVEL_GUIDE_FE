@@ -35,11 +35,19 @@ jobs:
         name: Generate artifact name
         run: |
           echo "START"
-          echo ${{vars.BUILD_NUMBER}}
-          echo BUILD_NUMBER=$((${{vars.BUILD_NUMBER}} + 1)) >> $GITHUB_ENV
-          echo artifact_name=travel-guide@${{vars.BUILD_NUMBER}} >> $GITHUB_OUTPUT
+          echo "Initial BUILD_NUMBER: ${{ vars.BUILD_NUMBER }}"
+
+          # Increment BUILD_NUMBER and write it to $GITHUB_ENV
+          next_build_number=$(( ${{ vars.BUILD_NUMBER }} + 1 ))
+          echo "BUILD_NUMBER=$next_build_number" >> $GITHUB_ENV
+
+          # Set artifact_name as an output
+          echo "artifact_name=travel-guide@$next_build_number" >> $GITHUB_OUTPUT
+
+          # Check the contents of $GITHUB_ENV (to verify if the variable was set correctly)
           cat $GITHUB_ENV
-          echo "Updated Build Numer: $BUILD_NUMBER"
+
+          echo "Updated Build Number: $next_build_number"
           echo "END"
       - name: Save Artifact
         uses: actions/upload-artifact@v4
