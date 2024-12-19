@@ -49,6 +49,8 @@ jobs:
 
           echo "Updated Build Number: $next_build_number"
           echo "END"
+      - name: Check ENV
+        run: echo "BUILD_NUMBER=$BUILD_NUMBER"
       - name: Save Artifact
         uses: actions/upload-artifact@v4
         with:
