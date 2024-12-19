@@ -42,5 +42,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: travel-guide@1.0.0
+          path: build
       - name: List Files
         run: ls -l
