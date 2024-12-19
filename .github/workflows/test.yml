@@ -30,7 +30,7 @@ jobs:
         name: Generate artifact name
         run: |
           echo "START"
-          echo $BUILD_NUMBER
+          echo ${{env.BUILD_NUMBER}}
           echo BUILD_NUMBER=$(expr $BUILD_NUMBER + 1) >> $GITHUB_ENV
           echo artifact_name=travel-guide@$BUILD_NUMBER >> $GITHUB_OUTPUT
           echo "END"
